@@ -1,109 +1,177 @@
 <!DOCTYPE html>
 <html>
 
-<!--Head-->
+<!-- Head -->
+<head>
+    <meta charset="UTF-8">
+    <title>Chad Okulovich</title>
+        <link rel="stylesheet" type="text/css" href="CSS/portfolio.css">
+</head>
 
-    <head>
-        <meta charset="utf-8">
-        <title>Chad Okulovich</title>
-        <link rel="stylesheet" type="text/css" href="./index.css">
-    </head>
 
 <!--Body-->
+<body class="Background">
 
-<body class="background">
-
-<!--Nav Bar-->
-
+<!--Navbar-->
     <div class="Navbar">
         <a class="active" href="#Home">Home</a>
+        <a href="#Slideshow">Slideshow</a> <!--This is a new section-->
         <a href="#About">About</a>
         <a href="#GitHub">GitHub</a>
-        <a href="#Contact">Contact</a>
+        <a onclick="openForm()" onblclick="closeForm()">Contact</a> <!--this makes it so that our openForm function runs when we click contact on the nav bar-->
     </div>
 
 <!--Home-->
-    <br> <!--Breaks inserted to add space between navbar and first heading-->
-    <br>
+    <div id="Home">
+        <br> <!--Breaks inserted to add space between navbar and first heading-->
+        <br>
 
 <!--Video-->
-    <div id="Home">
-        <video autoplay muted loop id="Water_Video"> <!--Makes the video play automatically on a loop with no sound-->
+        <video autoplay muted loop id="Water_Video"> <!--Makes the video play automatically, on a loop and with no sound -->
             <source src="Water_Video.mp4" type="video/mp4">
-            Your browser does not support HTML5 video. <!--Display message if video fails to run-->
+            Your browser does not support HTML5 video. <!--Display message if video fails to load-->
         </video>
     </div>
 
-<!--Video Text-->
+<!--Video text-->
     <div class="Video_Text">
-        <h1 style="color:gold;">Chad Okulovich's Portfolio</h1>
+        <h1 style="color:yellow;">Chad Okulovich's Portfolio</h1>
             <p>
                 <strong>
                     <center>
                         <q>The computer programmer is a creator of universes for which he alone is the lawgiver.
-                        <br>No playwright, no stage director, no emperor, however powerful, has ever excerised such absolute authorityto arrange a stage or
-                        <br>field of battle and to command such unswervingly dutiful actors or troops.
+                        <br>No playwright, no stage director, no emperor, however powerful, has ever exercised such absolute authority to arrange a stage
+                        <br>or field of battle and to command such unswervingly dutiful actors or troops.
                         </q>
                         <br>-Joseph Weizenbaum<br>
                         <br>
-                        My name is Chad Okulovich. Welcome to my portfolio website. On it, I will tell you about my background and experience.<br>
-                        <br>Thank you for stopping by and enjoy!
+                        My name is Chad Okulovich. Welcome to my portfolio website. <br>
+                        On it, I willl tell you about my background and experience.<br>
+                        <br>Thank you for checking it out!
                     </center>
-                </strong>
-            </p>
+            </strong>
+        </p>
     </div>
+
+<!--Slideshow section-->
+    <div id="Slideshow">
+        <div id="Slideshow_Background">
+            <div id="Slideshow_Container">
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">1 / 6</div>
+                        <img class="Slide_Show_Images" src="Images/Me.jpg" style="width:100%">
+                            <div class="text">I'm availble to assist on your project!</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">2 / 6</div>
+                        <img class="Slide_Show_Images" src="Images/HTML_CSS_and_JavaScript.jpeg" style="width:100%">
+                            <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, Javascript,</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">3 / 6</div>
+                        <img class="Slide_Show_Images" src="Images/Python.png" style="width:100%">
+                            <div class="text">the popular programming language Python,</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">4 / 6</div>
+                        <img class="Slide_Show_Images" src="Images/C_Sharp_and_Dot_NET.png" style="width:100%">
+                            <div class="text">C#, .NET Framework, ASP.NET, MVC,</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">5 / 6</div>
+                        <img class="Slide_Show_Images" src="Images/SQL_and_Database.jpg" style="width:100%">
+                            <div class="text">back end development, databases and SQL.</div>
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="Slide_Number">6 / 6</div>
+                        <img class="Slide_Show_Images" src="Images/Coding_1.jpg" style="width:100%">
+                            <div class="text">
+                                <a onclick="openForm()" href="#Contact" style="color:white;">Contact me today!</a>
+                            </div>
+                </div>
+
+                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+             
+            </div>
+        <br>
+
+            <div style="text-align:center">
+            
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+
+
+            </div>
+        </div>
+    </div>
+
 
 <!--About Section-->
     <div class="Row" id="About">
         <div class="Column_2"> <!--Left Column-->
-            <img src="https://static.zerochan.net/Shin.Megami.Tensei%3A.PERSONA.3.full.827405.jpg" alt"P3">
-        </div>
+        <img src="Images/Development.jpg" alt="Laptop">
+    </div>
 
-        <div class=Column_1"> <!--Right Column-->
-            <h1>About</h1>
-                <p>I am a software developer who loves to code. As a father of four, I enjoy spending time with them, playing games and when the opportunity happens. Traveling.</p>
+    <div class="Column_1"> <!--Right Column-->
+        <h1>About</h2>
+            <p>I am a software developer who loves to code. As a father of four, I enjoy spending time with my family and playing games</p>
         </div>
     </div>
 
 <!--GitHub Section-->
-    <div class="Row" id="GitHub">
+    <div clalss="Row" id="GitHub">
         <div class="Column_1"> <!--Left Column-->
             <h1>GitHub</h1>
-                <p>You can view the projects I have worked on from my GitHub profile here:<br>
+                <p>You can view my coding projects on my GitHub profile here:<br>
                 <center><a href="https://github.com/elwchadrock" target="_blank">Chad Okulovich's GitHub</a></center></p>
         </div>
 
-        <div class="Column_2"> <!--Right Column-->
-            <img src="https://static.fandomspot.com/images/09/2904/00-featured-mhw-gunlance-weapon.jpg" alt="mhwgl">
-            <br>
-
+        <div class="Column_2"><!--Right Column-->
+            <a href="https://github.com/elwchadrock" target="_blank"><img src="Images/GitHub.png"></a>
         </div>
-
     </div>
+</div>
 
 <!--Contact Section-->
-    <div class="Row" id="Contact">
-        <div class="Column_3"> <!--Contact image, left column-->
-            <img src="https://i.kym-cdn.com/entries/icons/facebook/000/029/959/Screen_Shot_2019-06-05_at_1.26.32_PM.jpg" alt="stonks">
-        </div>
-        
-        <div class="Column_1"> <!--Contact Form, right "Column"-->
-            <h2>Contact</h2>
-                <form action="" method="get"> <!-- This specifies where to send the form data and how it is left blank-->
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" placeholder="Please provide your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" palceholder="Please leave your message here">
-                        <input type="submit" value="Submit">
+    <div id="Contact">
+        <button onclick="openForm()" class="Pop_Up-Button"> CONTACT </button>
+            <div class="form-popup" id="myForm">
+                <form action="https://formspree.io/elwchadrock@gmail.com" method="POST" class="form-container"> <!--Here we are using a free online service from https://formspree.io/ to send our contact form to an email address of our choosing - note: it will not run unless live on the internet, you have to push it to your online website first -->
+                <h1>Contact</h1>
+                    <label for="name"><b>Name</b></label>
+                        <input type="text" placeholder="Type your name here" name="name" required>
+                    <label for="phone"><b>Phone</b></label>
+                        <input type="text" placeholder="Enter your phone number here" name="phone">
+                    <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Type your email address here" name="email" required>
+                    <label for="message"><b>Message</b></label>
+                        <input type="text" placeholder="Type your message here" name="message">
+
+        <button type="submit" class="btn">SUBMIT</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
                 </form>
         </div>
     </div>
 
-<!--Footer section-->
+<!--Footer Section-->
     <footer>
         <p>
-            <center>&copy Chad Okulovich., <a href="">My portfolio</a></center><br>
+            <center>&copy Chad Okulovich.</center>
         </p>
     </footer>
+
+    <script src="JS/portfolio.js"></script>
+
+</body>
+</html>
